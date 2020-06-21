@@ -11,7 +11,9 @@ For example, if our input was [1, 2, 3, 4, 5], the expected output would be [120
 
 **Solution:**
 [Thought Process](https://d2ta.github.io/DailyCodingProblem/Problem-01/problem-01.md)
+
 [Code](https://d2ta.github.io/DailyCodingProblem/Problem-01/problem-01.js)
+
 [Solution Page](https://d2ta.github.io/DailyCodingProblem/Problem-01/problem-01index.html)
 
 ## Problem #2:
