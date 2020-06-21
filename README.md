@@ -10,9 +10,9 @@ Given an array of integers, return a new array such that each element at index i
 For example, if our input was [1, 2, 3, 4, 5], the expected output would be [120, 60, 40, 30, 24]. If our input was [3, 2, 1], the expected output would be [2, 3, 6].
 
 **Solution:**
-Thought Process | Code | Solution Page
------------- | ------------- | ------------
-aaaa | aaa | aaa
+[Thought Process](https://d2ta.github.io/DailyCodingProblem/Problem-01/problem-01.md)
+[Code](https://d2ta.github.io/DailyCodingProblem/Problem-01/problem-01.js)
+[Solution Page](https://d2ta.github.io/DailyCodingProblem/Problem-01/problem-01index.html)
 
 ## Problem #2:
 Given a list of numbers and a number k, return whether any two numbers from the list add up to k.
