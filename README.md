@@ -51,27 +51,44 @@ For Example: given [10, 15, 3, 7] and k of 17, return true since 10+ 7 is 17.
 - [Code](https://d2ta.github.io/DailyCodingProblem/Problem-01/problem-01.js)
 
 ```javascript
-var initialArray = [1, 2, 3, 4, 5, 6];
+var initialArray = [1, 2, 3, 4, 5];
 
-function ArrayProduct(total, currentValue){
-    return total*currentValue;
+var k = 3;
+
+function ArraySubtract(currentValue){
+    return k - currentValue;
 }
 
-function ArrayDivisor(currentValue){
-    return ArrayProductValue/currentValue;
+function ArrayFind(currentValue){
+    // JavaScript Array includes() Method
+    // This Method checks if a value is in the Array
+    // Syntax: array.includes(element, start)
+    return initialArray.includes(currentValue);
 }
 
-// JavaScript Array Reduce() Method
-    // This method reduces the array to a single value
-    // Syntax: array.reduce(function(total, currentValue, currentIndex, arr), initialValue)
-ArrayProductValue = initialArray.reduce(ArrayProduct);
+function ArraySize(Array){
+    if (Array.length > 1){
+        return true;
+    } else {
+        return false;
+    }
+}
 
 // JavaScript Array map() Method
     // This method creates a new array with the results of calling a function for every array element
     // Syntax: array.map(function(currentValue, index, arr), thisValue)
-ArrayOutput = initialArray.map(ArrayDivisor);
+ArraySubtractvalue = initialArray.map(ArraySubtract);
+
+// JavaScript Array find() Method
+    // This method filters through each value to check whether or not and outputs the checked value
+    // Syntax: array.find(function(currentValue, index, arr),thisValue)
+ArrayOutput = ArraySubtractvalue.filter(ArrayFind);
+
+Output = ArraySize(ArrayOutput);
 
 console.log(initialArray);
-console.log(ArrayProductValue);
+console.log(k);
+console.log(ArraySubtractvalue);
 console.log(ArrayOutput);
+console.log(Output);
 ```
