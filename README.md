@@ -2,6 +2,8 @@
 
 Below are JavaScript written. One problem at minimum, a day. This Repository will contain answers, documentation and thoughts/methodology. 
 
+Some solutions may contain their own visualization page for generalized solutions and implementation.
+
 ## Problem #1:
 Given an array of integers, return a new array such that each element at index i of the new array is the product of all the numbers in the original array except the one at i.
 
