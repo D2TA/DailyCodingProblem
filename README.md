@@ -143,3 +143,58 @@ console.log(ArraySubtractvalue);
 console.log(ArrayOutput);
 console.log(Output);
 ```
+
+## Problem #4:
+Given an array of integers, find the first missing positive integer in linear time and constant space. In other words, find the lowest positive integer that does not exist in the array. The array can contain duplicates and negative numbers as well.
+
+For example, the input [3, 4, -1, 1] should give 2. The input [1, 2, 0] should give 3.
+
+You can modify the input array in-place.
+
+**Solution:**
+- [Thought Process](https://d2ta.github.io/DailyCodingProblem/Problem-04/problem-04.md)
+- [Solution Page](https://d2ta.github.io/DailyCodingProblem/Problem-04/problem-04index.html)
+- [Code](https://d2ta.github.io/DailyCodingProblem/Problem-04/problem-04.js)
+
+```javascript
+var initialArray = [1, 2, 3, 4, 5];
+
+var k = 3;
+
+function ArraySubtract(currentValue){
+    return k - currentValue;
+}
+
+function ArrayFind(currentValue){
+    // JavaScript Array includes() Method
+    // This Method checks if a value is in the Array
+    // Syntax: array.includes(element, start)
+    return initialArray.includes(currentValue);
+}
+
+function ArraySize(Array){
+    if (Array.length > 1){
+        return true;
+    } else {
+        return false;
+    }
+}
+
+// JavaScript Array map() Method
+    // This method creates a new array with the results of calling a function for every array element
+    // Syntax: array.map(function(currentValue, index, arr), thisValue)
+ArraySubtractvalue = initialArray.map(ArraySubtract);
+
+// JavaScript Array find() Method
+    // This method filters through each value to check whether or not and outputs the checked value
+    // Syntax: array.find(function(currentValue, index, arr),thisValue)
+ArrayOutput = ArraySubtractvalue.filter(ArrayFind);
+
+Output = ArraySize(ArrayOutput);
+
+console.log(initialArray);
+console.log(k);
+console.log(ArraySubtractvalue);
+console.log(ArrayOutput);
+console.log(Output);
+```
