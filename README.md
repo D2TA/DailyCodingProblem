@@ -46,9 +46,78 @@ Given a list of numbers and a number k, return whether any two numbers from the 
 For Example: given [10, 15, 3, 7] and k of 17, return true since 10+ 7 is 17.
 
 **Solution:**
-- [Thought Process](https://d2ta.github.io/DailyCodingProblem/Problem-01/problem-01.md)
-- [Solution Page](https://d2ta.github.io/DailyCodingProblem/Problem-01/problem-01index.html)
-- [Code](https://d2ta.github.io/DailyCodingProblem/Problem-01/problem-01.js)
+- [Thought Process](https://d2ta.github.io/DailyCodingProblem/Problem-02/problem-02.md)
+- [Solution Page](https://d2ta.github.io/DailyCodingProblem/Problem-02/problem-02index.html)
+- [Code](https://d2ta.github.io/DailyCodingProblem/Problem-02/problem-02.js)
+
+```javascript
+var initialArray = [1, 2, 3, 4, 5];
+
+var k = 3;
+
+function ArraySubtract(currentValue){
+    return k - currentValue;
+}
+
+function ArrayFind(currentValue){
+    // JavaScript Array includes() Method
+    // This Method checks if a value is in the Array
+    // Syntax: array.includes(element, start)
+    return initialArray.includes(currentValue);
+}
+
+function ArraySize(Array){
+    if (Array.length > 1){
+        return true;
+    } else {
+        return false;
+    }
+}
+
+// JavaScript Array map() Method
+    // This method creates a new array with the results of calling a function for every array element
+    // Syntax: array.map(function(currentValue, index, arr), thisValue)
+ArraySubtractvalue = initialArray.map(ArraySubtract);
+
+// JavaScript Array find() Method
+    // This method filters through each value to check whether or not and outputs the checked value
+    // Syntax: array.find(function(currentValue, index, arr),thisValue)
+ArrayOutput = ArraySubtractvalue.filter(ArrayFind);
+
+Output = ArraySize(ArrayOutput);
+
+console.log(initialArray);
+console.log(k);
+console.log(ArraySubtractvalue);
+console.log(ArrayOutput);
+console.log(Output);
+```
+
+## Problem #3:
+Given the root to a binary tree, implement serialize(root), which serializes the tree into a string, and deserialize(s), which deserializes the string back into the tree.
+
+**Solution:**
+- [Thought Process](https://d2ta.github.io/DailyCodingProblem/Problem-03/problem-03.md)
+- [Solution Page](https://d2ta.github.io/DailyCodingProblem/Problem-03/problem-03index.html)
+- [Code](https://d2ta.github.io/DailyCodingProblem/Problem-03/problem-03.js)
+
+```javascript
+
+N/A
+
+```
+
+## Problem #4:
+Given an array of integers, find the first missing positive integer in linear time and constant space. In other words, find the lowest positive integer that does not exist in the array. The array can contain duplicates and negative numbers as well.
+
+For example, the input [3, 4, -1, 1] should give 2. The input [1, 2, 0] should give 3.
+
+You can modify the input array in-place.
+
+**Solution:**
+- [Thought Process](https://d2ta.github.io/DailyCodingProblem/Problem-04/problem-04.md)
+- [Solution Page](https://d2ta.github.io/DailyCodingProblem/Problem-04/problem-04index.html)
+- [Code](https://d2ta.github.io/DailyCodingProblem/Problem-04/problem-04.js)
 
 ```javascript
 var initialArray = [1, 2, 3, 4, 5];
