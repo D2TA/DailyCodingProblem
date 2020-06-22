@@ -119,45 +119,100 @@ You can modify the input array in-place.
 - [Solution Page](https://d2ta.github.io/DailyCodingProblem/Problem-04/problem-04index.html)
 - [Code](https://d2ta.github.io/DailyCodingProblem/Problem-04/problem-04.js)
 
-```javascript
-var initialArray = [1, 2, 3, 4, 5];
-
+```javascriptvar initialArray = [1, 5, 7, 20, 25];
+var UniqueInitialArray = [];
+var SubtractArray = [];
 var k = 3;
 
-function ArraySubtract(currentValue){
-    return k - currentValue;
-}
-
-function ArrayFind(currentValue){
+// This function builds a unique array from another array (regardless of duplicates, doesn't have to be sorted at all)
+function UniqueExport(item){
     // JavaScript Array includes() Method
-    // This Method checks if a value is in the Array
-    // Syntax: array.includes(element, start)
-    return initialArray.includes(currentValue);
-}
-
-function ArraySize(Array){
-    if (Array.length > 1){
-        return true;
-    } else {
-        return false;
+    // This method checks if an array includes the item
+    // Sytanx: array.includes(element, start)
+    if (!(UniqueInitialArray.includes(item))){
+        UniqueInitialArray.push(item);
     }
-}
+};
 
-// JavaScript Array map() Method
-    // This method creates a new array with the results of calling a function for every array element
-    // Syntax: array.map(function(currentValue, index, arr), thisValue)
-ArraySubtractvalue = initialArray.map(ArraySubtract);
+function ArraySubtract(item, index){
+    if (index === 0){
+        return SubtractArray.push(1);
+    } else {
+        return SubtractArray.push(item - UniqueInitialArray[index - 1]);
+    }
+};
 
-// JavaScript Array find() Method
-    // This method filters through each value to check whether or not and outputs the checked value
-    // Syntax: array.find(function(currentValue, index, arr),thisValue)
-ArrayOutput = ArraySubtractvalue.filter(ArrayFind);
+    // JavaScript Array sort() Method
+    // This Method sorts alphabetic or numeric
+    // Syntax: array.sort(compareFunction)
+initialArray.sort(function (a, b){return a - b;});
+initialArray.forEach(UniqueExport);
+UniqueInitialArray.sort(function (a, b){return a - b;});
+UniqueInitialArray.forEach(ArraySubtract);
+    // Use ... for an array in Math Methods
+var MinValue = Math.min(...SubtractArray);
+var MinValueIndex = SubtractArray.lastIndexOf(MinValue);
 
-Output = ArraySize(ArrayOutput);
+var SecondMinValue = Math.min.apply(null, SubtractArray.filter(n => n != Math.min(...SubtractArray) ));
+var SecondMinIndex = SubtractArray.lastIndexOf(SecondMinValue)
 
-console.log(initialArray);
-console.log(k);
-console.log(ArraySubtractvalue);
-console.log(ArrayOutput);
+Method1 = UniqueInitialArray[MinValueIndex] + 1;
+Method2 = UniqueInitialArray[SecondMinIndex -1] + 1;
+
+Output = Math.min(Method1, Method2);
+
+console.log(UniqueInitialArray);
 console.log(Output);
+```
+
+##Problem 5:
+cons(a, b) constructs a pair, and car(pair) and cdr(pair) returns the first and last element of that pair. For example, car(cons(3, 4)) returns 3, and cdr(cons(3, 4)) returns 4.
+Given this implementation of cons:
+def cons(a, b):
+    return lambda f : f(a, b)
+Implement car and cdr.
+
+**Solution:**
+- [Thought Process](https://d2ta.github.io/DailyCodingProblem/Problem-05/problem-05.md)
+- [Solution Page](https://d2ta.github.io/DailyCodingProblem/Problem-05/problem-05index.html)
+- [Code](https://d2ta.github.io/DailyCodingProblem/Problem-05/problem-05.js)
+
+```javascript
+
+N/A
+
+```
+
+##Problem 6:
+An XOR linked list is a more memory efficient doubly linked list. Instead of each node holding next and prev fields, it holds a field named both, which is an XOR of the next node and the previous node. Implement an XOR linked list; it has an add(element) which adds the element to the end, and a get(index) which returns the node at index.
+
+If using a language that has no pointers (such as Python), you can assume you have access to get_pointer and dereference_pointer functions that converts between nodes and memory addresses.
+
+**Solution:**
+- [Thought Process](https://d2ta.github.io/DailyCodingProblem/Problem-05/problem-05.md)
+- [Solution Page](https://d2ta.github.io/DailyCodingProblem/Problem-05/problem-05index.html)
+- [Code](https://d2ta.github.io/DailyCodingProblem/Problem-05/problem-05.js)
+
+```javascript
+
+N/A
+
+```
+
+##Problem 7:
+Given the mapping a = 1, b = 2, ... z = 26, and an encoded message, count the number of ways it can be decoded.
+
+For example, the message '111' would give 3, since it could be decoded as 'aaa', 'ka', and 'ak'.
+
+You can assume that the messages are decodable. For example, '001' is not allowed.
+
+**Solution:**
+- [Thought Process](https://d2ta.github.io/DailyCodingProblem/Problem-05/problem-05.md)
+- [Solution Page](https://d2ta.github.io/DailyCodingProblem/Problem-05/problem-05index.html)
+- [Code](https://d2ta.github.io/DailyCodingProblem/Problem-05/problem-05.js)
+
+```javascript
+
+N/A
+
 ```
