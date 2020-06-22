@@ -245,7 +245,34 @@ For example, [2, 4, 6, 8] should return 12, since we pick 4 and 8. [5, 1, 1, 5] 
 - [Code](https://d2ta.github.io/DailyCodingProblem/Problem-05/problem-05.js)
 
 ```javascript
+var initialArray = [5, 1, 1, 5];
+var sumArray = [];
 
-N/A
+function OtherArray(item,index,A){
+    if (A != index){
+        PivotArray.push(item);
+    }
+    return PivotArray
+}
 
+function AddFunction(item, index){
+    var A = index;
+    var PivotArray = [];
+    initialArray.forEach( function OtherArray(item, index){
+        if ( (A != index) && (A+1 != index) && (A-1 != index) ){
+            PivotArray.push(item);
+        }
+    });
+    var PivotValue = PivotArray.entries();
+
+    for (x of PivotArray){
+        sumArray.push(x + item);
+    };
+};
+
+initialArray.forEach(AddFunction)
+
+sumArray = Array.from(new Set(sumArray))
+OutputValue = Math.max(...sumArray)
+console.log(OutputValue)
 ```
