@@ -240,9 +240,9 @@ Given a list of integers, write a function that returns the largest sum of non-a
 For example, [2, 4, 6, 8] should return 12, since we pick 4 and 8. [5, 1, 1, 5] should return 10, since we pick 5 and 5.
 
 **Solution:**
-- [Thought Process](https://d2ta.github.io/DailyCodingProblem/Problem-05/problem-05.md)
-- [Solution Page](https://d2ta.github.io/DailyCodingProblem/Problem-05/problem-05index.html)
-- [Code](https://d2ta.github.io/DailyCodingProblem/Problem-05/problem-05.js)
+- [Thought Process](https://d2ta.github.io/DailyCodingProblem/Problem-09/problem-09.md)
+- [Solution Page](https://d2ta.github.io/DailyCodingProblem/Problem-09/problem-09index.html)
+- [Code](https://d2ta.github.io/DailyCodingProblem/Problem-09/problem-09.js)
 
 ```javascript
 var initialArray = [5, 1, 1, 5];
