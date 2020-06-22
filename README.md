@@ -119,7 +119,8 @@ You can modify the input array in-place.
 - [Solution Page](https://d2ta.github.io/DailyCodingProblem/Problem-04/problem-04index.html)
 - [Code](https://d2ta.github.io/DailyCodingProblem/Problem-04/problem-04.js)
 
-```javascriptvar initialArray = [1, 5, 7, 20, 25];
+```javascript
+var initialArray = [1, 5, 7, 20, 25];
 var UniqueInitialArray = [];
 var SubtractArray = [];
 var k = 3;
