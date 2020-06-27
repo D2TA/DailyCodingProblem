@@ -302,7 +302,30 @@ Hint: Try preprocessing the dictionary into a more efficient data structure to s
 - [Code](https://d2ta.github.io/DailyCodingProblem/Problem-09/problem-09.js)
 
 ```javascript
-
+    const fs = require('fs');
+    const http = require('http');
+    
+    var WordSuggestion = 'abandon';
+    // Step 1: Obtain Word Array
+        // JavaScript Function readFileSync(): 
+    var WordList = fs.readFileSync('C:/Users/David Ta/Desktop/Repository/DailyCodingProblem/Problem-11/words_alpha.txt').toString().split("\r\n");
+        // JavaScript Array forEach() Method
+        // This method that performs a function for each item in the array
+        // Sytanx: array.forEach(function(currentValue, index, arr), thisValue)
+    WordList.forEach(function regExReplace(item, index, arr){
+        arr[index] = item.replace('\r','')
+    });
+        // Step 2: Build Suggestion
+    function SuggestionArray(item){
+        return item.includes(WordSuggestion)
+    };
+    function HTMLSuggest(Word,WordArray){
+        WordArrayFilter = WordArray.filter(SuggestionArray);
+        SuggestionArray = WordArrayFilter.slice(0,9);
+        return SuggestionArray.toString();
+    };
+    
+    console.log(HTMLSuggest(WordSuggestion,WordList));    
 ```
 
 ## Problem 12:
