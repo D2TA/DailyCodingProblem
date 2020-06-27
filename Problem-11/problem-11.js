@@ -6,7 +6,6 @@
     // https://nodejs.org/dist/latest-v6.x/docs/api/fs.html
     const fs = require('fs');
     const http = require('http');
-    const readline  = require('readline');
     
     var WordSuggestion = 'abandon';
     // Step 1: Obtain Word Array
