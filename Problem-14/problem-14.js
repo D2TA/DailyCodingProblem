@@ -14,10 +14,10 @@ var A = 0;
 var estimateValue = 0;
 
 while (estimateValue <= TrueValue){
+    iterationCount ++
     A = A + 0.001;
     estimateValue = A / ( (x^2) + (y^2) );
     estimateValue = Math.floor( estimateValue * 1000) /1000;
-    iterationCount ++
 }
 
 console.log(TrueValue);
