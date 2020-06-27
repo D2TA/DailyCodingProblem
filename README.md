@@ -297,12 +297,34 @@ For example, given the query string de and the set of strings [dog, deer, deal],
 Hint: Try preprocessing the dictionary into a more efficient data structure to speed up queries.
 
 **Solution:**
-- [Thought Process](https://d2ta.github.io/DailyCodingProblem/Problem-09/problem-09.md)
-- [Solution Page](https://d2ta.github.io/DailyCodingProblem/Problem-09/problem-09index.html)
-- [Code](https://d2ta.github.io/DailyCodingProblem/Problem-09/problem-09.js)
-
+- [Thought Process](https://d2ta.github.io/DailyCodingProblem/Problem-11/problem-11.md)
+- [Code](https://d2ta.github.io/DailyCodingProblem/Problem-11/problem-11.js)
+- This solution uses Node.js
 ```javascript
-
+    const fs = require('fs');
+    const http = require('http');
+    
+    var WordSuggestion = 'abandon';
+    // Step 1: Obtain Word Array
+        // JavaScript Function readFileSync(): 
+    var WordList = fs.readFileSync('C:/Users/David Ta/Desktop/Repository/DailyCodingProblem/Problem-11/words_alpha.txt').toString().split("\r\n");
+        // JavaScript Array forEach() Method
+        // This method that performs a function for each item in the array
+        // Sytanx: array.forEach(function(currentValue, index, arr), thisValue)
+    WordList.forEach(function regExReplace(item, index, arr){
+        arr[index] = item.replace('\r','')
+    });
+        // Step 2: Build Suggestion
+    function SuggestionArray(item){
+        return item.includes(WordSuggestion)
+    };
+    function HTMLSuggest(Word,WordArray){
+        WordArrayFilter = WordArray.filter(SuggestionArray);
+        SuggestionArray = WordArrayFilter.slice(0,9);
+        return SuggestionArray.toString();
+    };
+    
+    console.log(HTMLSuggest(WordSuggestion,WordList));    
 ```
 
 ## Problem 12:
@@ -316,6 +338,87 @@ For example, if N is 4, then there are 5 unique ways:
 1, 1, 2
 2, 2
 What if, instead of being able to climb 1 or 2 steps at a time, you could climb any number from a set of positive integers X? For example, if X = {1, 3, 5}, you could climb 1, 3, or 5 steps at a time.
+
+**Solution:**
+- [Thought Process](https://d2ta.github.io/DailyCodingProblem/Problem-09/problem-09.md)
+- [Solution Page](https://d2ta.github.io/DailyCodingProblem/Problem-09/problem-09index.html)
+- [Code](https://d2ta.github.io/DailyCodingProblem/Problem-09/problem-09.js)
+
+```javascript
+
+```
+
+## Problem 13:
+Given an integer k and a string s, find the length of the longest substring that contains at most k distinct characters.
+
+For example, given s = "abcba" and k = 2, the longest substring with k distinct characters is "bcb".
+
+**Solution:**
+- [Thought Process](https://d2ta.github.io/DailyCodingProblem/Problem-09/problem-09.md)
+- [Solution Page](https://d2ta.github.io/DailyCodingProblem/Problem-09/problem-09index.html)
+- [Code](https://d2ta.github.io/DailyCodingProblem/Problem-09/problem-09.js)
+
+```javascript
+
+```
+
+## Problem 14:
+The area of a circle is defined as r^2. Estimate \pi to 3 decimal places using a Monte Carlo method.
+
+Hint: The basic equation of a circle is x^2 + y^2 = r^2.
+
+**Solution:**
+- [Thought Process](https://d2ta.github.io/DailyCodingProblem/Problem-09/problem-09.md)
+- [Solution Page](https://d2ta.github.io/DailyCodingProblem/Problem-09/problem-09index.html)
+- [Code](https://d2ta.github.io/DailyCodingProblem/Problem-09/problem-09.js)
+
+```javascript
+// Area of Circle is pi r^2
+    // Equation of Circle is x^2 + y^2 = r^2
+// A = pi * r^2
+// pi = A / r^2
+// pi = A / ( x^2 + y^2 )
+
+var TrueValue = Math.floor(Math.PI*1000)/1000;
+
+// For a fixed X value and Y value, we can incrementally increase A to estimate pi
+var x = 1;
+var y = 1;
+var iterationCount = 1;
+var A = 0;
+var estimateValue = 0;
+
+while (estimateValue <= TrueValue){
+    A = A + 0.001;
+    estimateValue = A / ( (x^2) + (y^2) );
+    estimateValue = Math.floor( estimateValue * 1000) /1000;
+    iterationCount ++
+}
+
+console.log(TrueValue);
+console.log(estimateValue);
+console.log(iterationCount);
+```
+
+## Problem 15:
+Given a stream of elements too large to store in memory, pick a random element from the stream with uniform probability.
+
+**Solution:**
+- [Thought Process](https://d2ta.github.io/DailyCodingProblem/Problem-09/problem-09.md)
+- [Solution Page](https://d2ta.github.io/DailyCodingProblem/Problem-09/problem-09index.html)
+- [Code](https://d2ta.github.io/DailyCodingProblem/Problem-09/problem-09.js)
+
+```javascript
+
+```
+
+## Problem 16:
+You run an e-commerce website and want to record the last N order ids in a log. Implement a data structure to accomplish this, with the following API:
+
+record(order_id): adds the order_id to the log 
+get_last(i): gets the ith last element from the log. 
+i is guaranteed to be smaller than or equal to N. 
+You should be as efficient with time and space as possible.
 
 **Solution:**
 - [Thought Process](https://d2ta.github.io/DailyCodingProblem/Problem-09/problem-09.md)
