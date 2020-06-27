@@ -373,5 +373,66 @@ Hint: The basic equation of a circle is x^2 + y^2 = r^2.
 - [Code](https://d2ta.github.io/DailyCodingProblem/Problem-09/problem-09.js)
 
 ```javascript
+// Area of Circle is pi r^2
+    // Equation of Circle is x^2 + y^2 = r^2
+    // r = C/ 2pi
+var TrueValue = Math.floor(Math.PI*1000)/1000;
+var x = 1;
+
+
+// A = pi * r^2
+// pi = A / r^2
+// pi = A / sqrt ( x^2 + y^2 )
+
+// r = C / 2* pi
+// r = 2 * x / 2 * pi
+
+// pi = x / sqrt ( x^2 + y^2 )
+
+// For a fixed X value and Y value, we can incrementally increase A to estimate pi
+var x = 1;
+var y = 1;
+var iterationCount = 1;
+var A = 0;
+var estimateValue = 0;
+
+while (estimateValue <= TrueValue){
+    A = A + 0.001;
+    estimateValue = A / ( (x^2) + (y^2) );
+    estimateValue = Math.floor( estimateValue * 1000) /1000;
+    iterationCount ++
+}
+
+console.log(TrueValue);
+console.log(estimateValue);
+console.log(iterationCount);
+```
+
+## Problem 15:
+Given a stream of elements too large to store in memory, pick a random element from the stream with uniform probability.
+
+**Solution:**
+- [Thought Process](https://d2ta.github.io/DailyCodingProblem/Problem-09/problem-09.md)
+- [Solution Page](https://d2ta.github.io/DailyCodingProblem/Problem-09/problem-09index.html)
+- [Code](https://d2ta.github.io/DailyCodingProblem/Problem-09/problem-09.js)
+
+```javascript
+
+```
+
+## Problem 16:
+You run an e-commerce website and want to record the last N order ids in a log. Implement a data structure to accomplish this, with the following API:
+
+record(order_id): adds the order_id to the log 
+get_last(i): gets the ith last element from the log. 
+i is guaranteed to be smaller than or equal to N. 
+You should be as efficient with time and space as possible.
+
+**Solution:**
+- [Thought Process](https://d2ta.github.io/DailyCodingProblem/Problem-09/problem-09.md)
+- [Solution Page](https://d2ta.github.io/DailyCodingProblem/Problem-09/problem-09index.html)
+- [Code](https://d2ta.github.io/DailyCodingProblem/Problem-09/problem-09.js)
+
+```javascript
 
 ```
