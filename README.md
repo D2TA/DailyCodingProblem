@@ -375,19 +375,11 @@ Hint: The basic equation of a circle is x^2 + y^2 = r^2.
 ```javascript
 // Area of Circle is pi r^2
     // Equation of Circle is x^2 + y^2 = r^2
-    // r = C/ 2pi
-var TrueValue = Math.floor(Math.PI*1000)/1000;
-var x = 1;
-
-
 // A = pi * r^2
 // pi = A / r^2
-// pi = A / sqrt ( x^2 + y^2 )
+// pi = A / ( x^2 + y^2 )
 
-// r = C / 2* pi
-// r = 2 * x / 2 * pi
-
-// pi = x / sqrt ( x^2 + y^2 )
+var TrueValue = Math.floor(Math.PI*1000)/1000;
 
 // For a fixed X value and Y value, we can incrementally increase A to estimate pi
 var x = 1;
