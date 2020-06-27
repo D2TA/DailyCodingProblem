@@ -347,3 +347,17 @@ What if, instead of being able to climb 1 or 2 steps at a time, you could climb 
 ```javascript
 
 ```
+
+## Problem 13:
+Given an integer k and a string s, find the length of the longest substring that contains at most k distinct characters.
+
+For example, given s = "abcba" and k = 2, the longest substring with k distinct characters is "bcb".
+
+**Solution:**
+- [Thought Process](https://d2ta.github.io/DailyCodingProblem/Problem-09/problem-09.md)
+- [Solution Page](https://d2ta.github.io/DailyCodingProblem/Problem-09/problem-09index.html)
+- [Code](https://d2ta.github.io/DailyCodingProblem/Problem-09/problem-09.js)
+
+```javascript
+
+```
