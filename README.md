@@ -297,10 +297,9 @@ For example, given the query string de and the set of strings [dog, deer, deal],
 Hint: Try preprocessing the dictionary into a more efficient data structure to speed up queries.
 
 **Solution:**
-- [Thought Process](https://d2ta.github.io/DailyCodingProblem/Problem-09/problem-09.md)
-- [Solution Page](https://d2ta.github.io/DailyCodingProblem/Problem-09/problem-09index.html)
-- [Code](https://d2ta.github.io/DailyCodingProblem/Problem-09/problem-09.js)
-
+- [Thought Process](https://d2ta.github.io/DailyCodingProblem/Problem-11/problem-11.md)
+- [Code](https://d2ta.github.io/DailyCodingProblem/Problem-11/problem-11.js)
+- This solution uses Node.js
 ```javascript
     const fs = require('fs');
     const http = require('http');
