@@ -361,3 +361,17 @@ For example, given s = "abcba" and k = 2, the longest substring with k distinct 
 ```javascript
 
 ```
+
+## Problem 14:
+The area of a circle is defined as r^2. Estimate \pi to 3 decimal places using a Monte Carlo method.
+
+Hint: The basic equation of a circle is x^2 + y^2 = r^2.
+
+**Solution:**
+- [Thought Process](https://d2ta.github.io/DailyCodingProblem/Problem-09/problem-09.md)
+- [Solution Page](https://d2ta.github.io/DailyCodingProblem/Problem-09/problem-09index.html)
+- [Code](https://d2ta.github.io/DailyCodingProblem/Problem-09/problem-09.js)
+
+```javascript
+
+```
