@@ -611,3 +611,79 @@ Given an N by K matrix where the nth row and kth column represents the cost to b
 
 ```javascript
 ```
+
+## Problem 20:
+Given two singly linked lists that intersect at some point, find the intersecting node. The lists are non-cyclical.
+
+For example, given A = 3 -> 7 -> 8 -> 10 and B = 99 -> 1 -> 8 -> 10, return the node with value 8.
+
+In this example, assume nodes with the same value are the exact same node objects.
+
+Do this in O(M + N) time (where M and N are the lengths of the lists) and constant space.
+
+**Solution:**
+- [Thought Process](https://d2ta.github.io/DailyCodingProblem/Problem-09/problem-09.md)
+- [Solution Page](https://d2ta.github.io/DailyCodingProblem/Problem-09/problem-09index.html)
+- [Code](https://d2ta.github.io/DailyCodingProblem/Problem-09/problem-09.js)
+
+```javascript
+var NodeString1 = '3 -> 7 -> 8 -> 10'
+var NodeString2 = '99 -> 1 -> 8 -> 10'
+
+function StringArray(NodeString){
+    CommaVector = [];
+    NodeArray = [];
+    
+    // Perform a global replacement: is to include / /g
+    NodeString = NodeString.replace(/ -> /g,',');
+    
+    // Fron Node String, identify comma placement
+    for (i=0; i <= NodeString.length - 1; i++){
+
+        if (NodeString[i] === ','){
+            CommaVector.push(i)
+        };
+    };
+    // Given comma placement, output string values to array
+    NodeArray.push(NodeString.slice(0, CommaVector[0]))
+    for (i = 0; i <= CommaVector.length - 1; i ++){
+        NodeArray.push( NodeString.slice( CommaVector[i]+1, CommaVector[i+1] ) )
+    };
+    return NodeArray;
+};
+
+function ValueArrayCheck1(item) {
+    if (Array2.includes(item)){
+        console.log('There is a Node Match from Array1 to Array2. Node Value: ' + item.toString())
+    }
+};
+
+function ValueArrayCheck2(item) {
+    if (Array1.includes(item)){
+        console.log('There is a Node Match from Array2 to Array1. Node Value: ' + item.toString())
+    }
+};
+Array1 = StringArray(NodeString1);
+Array2 = StringArray(NodeString2);
+
+console.log('Array 1 is: ')
+console.log(Array1)
+console.log('Array 2 is: ')
+console.log(Array2)
+
+Array1.forEach(ValueArrayCheck1);
+Array2.forEach(ValueArrayCheck2);
+```
+
+## Problem 21:
+Given an array of time intervals (start, end) for classroom lectures (possibly overlapping), find the minimum number of rooms required.
+
+For example, given [(30, 75), (0, 50), (60, 150)], you should return 2.
+
+**Solution:**
+- [Thought Process](https://d2ta.github.io/DailyCodingProblem/Problem-09/problem-09.md)
+- [Solution Page](https://d2ta.github.io/DailyCodingProblem/Problem-09/problem-09index.html)
+- [Code](https://d2ta.github.io/DailyCodingProblem/Problem-09/problem-09.js)
+
+```javascript
+```
