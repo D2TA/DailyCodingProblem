@@ -416,9 +416,110 @@ Given a stream of elements too large to store in memory, pick a random element f
 You run an e-commerce website and want to record the last N order ids in a log. Implement a data structure to accomplish this, with the following API:
 
 record(order_id): adds the order_id to the log 
+
 get_last(i): gets the ith last element from the log. 
+
 i is guaranteed to be smaller than or equal to N. 
+
 You should be as efficient with time and space as possible.
+
+**Solution:**
+- [Thought Process](https://d2ta.github.io/DailyCodingProblem/Problem-09/problem-09.md)
+- [Solution Page](https://d2ta.github.io/DailyCodingProblem/Problem-09/problem-09index.html)
+- [Code](https://d2ta.github.io/DailyCodingProblem/Problem-09/problem-09.js)
+
+```javascript
+// Order Log will be our array/database of order details
+var OrderLog = [];
+var Letters  = Array.from('ABCDEFGHIJKLMNOPQRSTUVWXYZ');
+
+const t0 = new Date().getTime();
+
+//      | OrderNum | RecordDate | ProductID | CustomerID | OrderStatus
+    // Ideally, CustomerID will be linked to a Customer Table
+    // Ideally, ProductID will be linked to a Product Catelog Table
+    // Ideally, OrderStatus will be Active, Shipped, Recieved, Cancelled and Issue
+        // Completed indicates
+        // Cancelled indicates orders that are cancelled
+        // Active indicates that the order is still being processed
+
+function record(ProductID, CustomerID){
+    var recordDate = new Date();
+    var OrderID = OrderLog.length;
+    // Format of the Date is ISO 8601 Extended Format:
+        // `YYYY-MM-DDTHH:mm:ss.sssZ`
+            // T: Indicates the start of time
+            // Z: If Z is present, then the date will be set to UTC, if not then it is Local Time
+    OrderLog.push([OrderID,recordDate, ProductID, CustomerID]);
+};
+
+function get_last(i){
+    var OrderID = OrderLog.length;
+    if (i > OrderID){
+        console.log('Please try again, with another value. There are : ' + OrderID.toString() + ' Orders in Total.')
+    } else {
+        console.log(OrderLog[OrderLog.length - i]);
+    };
+};
+
+function endExecution(StartTime){
+    const EndTime = new Date().getTime();
+    console.log('Time to Execute took ' + ( (EndTime - StartTime)/1000 ).toString() + ' milliseconds.');
+};
+
+
+
+
+for (i = 0; i < 1000000; i++){
+    var randomProductNum = Math.floor(Math.random() *100);
+    if (randomProductNum < 100){
+        var randomProductString = '0' + randomProductNum.toString();
+    } else {
+        var randomProductString = randomProductNum.toString();
+    };
+    var randomCustomerNum = Math.floor(Math.random() *10000);
+    var InsertProduct = Letters[Math.floor(Math.random() * (Letters.length - 0) + 0)] + randomProductString;
+    var InsertCustomer = 'CUST' + randomCustomerNum.toString();
+    record(InsertProduct, InsertCustomer);
+}
+
+    // The setTimeout() method calls a function or evaluates an expression after a specified number of milliseconds.
+    // 1000 ms = 1 second.
+    // Syntax: setTimeout(function, milliseconds, param1, param2, ...)
+
+setTimeout(function() {
+    record('K102','CUST2992')
+    get_last(957212)
+    endExecution(t0)
+},100);
+
+```
+
+## Problem 17:
+Suppose we represent our file system by a string in the following manner:
+
+The string "dir\n\tsubdir1\n\tsubdir2\n\t\tfile.ext" represents:
+
+dir
+    subdir1
+    subdir2
+        file.ext
+The directory dir contains an empty sub-directory subdir1 and a sub-directory subdir2 containing a file file.ext.
+
+The string "dir\n\tsubdir1\n\t\tfile1.ext\n\t\tsubsubdir1\n\tsubdir2\n\t\tsubsubdir2\n\t\t\tfile2.ext" represents:
+
+dir
+    subdir1
+        file1.ext
+        subsubdir1
+    subdir2
+        subsubdir2
+            file2.ext
+The directory dir contains two sub-directories subdir1 and subdir2. subdir1 contains a file file1.ext and an empty second-level sub-directory subsubdir1. subdir2 contains a second-level sub-directory subsubdir2 containing a file file2.ext.
+
+We are interested in finding the longest (number of characters) absolute path to a file within our file system. For example, in the second example above, the longest absolute path is "dir/subdir2/subsubdir2/file2.ext", and its length is 32 (not including the double quotes).
+
+Given a string representing the file system in the above format, return the length of the longest absolute path to a file in the abstracted file system. If there is no file in the system, return 0.
 
 **Solution:**
 - [Thought Process](https://d2ta.github.io/DailyCodingProblem/Problem-09/problem-09.md)
@@ -428,3 +529,28 @@ You should be as efficient with time and space as possible.
 ```javascript
 
 ```
+
+## Problem 18:
+Given an array of integers and a number k, where 1 <= k <= length of the array, compute the maximum values of each subarray of length k.
+
+For example, given array = [10, 5, 2, 7, 8, 7] and k = 3, we should get: [10, 7, 8, 8], since:
+
+10 = max(10, 5, 2)
+
+7 = max(5, 2, 7)
+
+8 = max(2, 7, 8)
+
+8 = max(7, 8, 7)
+
+Do this in O(n) time and O(k) space. You can modify the input array in-place and you do not need to store the results. You can simply print them out as you compute them.
+
+**Solution:**
+- [Thought Process](https://d2ta.github.io/DailyCodingProblem/Problem-09/problem-09.md)
+- [Solution Page](https://d2ta.github.io/DailyCodingProblem/Problem-09/problem-09index.html)
+- [Code](https://d2ta.github.io/DailyCodingProblem/Problem-09/problem-09.js)
+
+```javascript
+
+```
+
