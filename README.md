@@ -686,4 +686,67 @@ For example, given [(30, 75), (0, 50), (60, 150)], you should return 2.
 - [Code](https://d2ta.github.io/DailyCodingProblem/Problem-09/problem-09.js)
 
 ```javascript
+var IntervalArray = [ [30, 75], [30, 60], [20, 30], [0, 50], [0,50], [60, 150] ]
+
+function MinRooms(IntervalArray){
+    ConflictArray = []
+    CriteriaArray = []
+    for (i = 0; i <= IntervalArray.length - 1; i++){
+        var ClassInterval = IntervalArray[i]
+        var ClassStart = ClassInterval[0];
+        var ClassEnd = ClassInterval[1];
+    
+        OtherClassInterval = IntervalArray.filter(function classCheck(item){
+            return item[0] != ClassStart && item[1] != ClassEnd;
+        });
+        for (i = 0; i <= OtherClassInterval.length - 1; i++){
+            var OtherClass = OtherClassInterval[i]
+            var OtherClassStart = OtherClass[0] 
+            var OtherClassEnd = OtherClass[1]
+
+            // Comparision
+            if (OtherClassEnd >= ClassStart && OtherClassEnd < ClassEnd && OtherClassEnd != ClassStart){
+                ConflictArray.push( ClassInterval, OtherClass )
+                CriteriaArray.push(1)
+            } else if (ClassEnd > OtherClassStart && ClassEnd >= OtherClassEnd && ClassStart < OtherClassStart ) {
+                ConflictArray.push( ClassInterval, OtherClass )
+                CriteriaArray.push(2)
+            };
+        };
+    };
+    
+    // Suggestion
+    if (ConflictArray.length > 0){
+        console.log(ConflictArray);
+        console.log(CriteriaArray);
+        ConflictClass = ConflictArray.filter( 
+            function onlyUnique(value, index, self){
+                return self.indexOf(value) === index;
+            }
+        );
+        console.log('There is a conflict for: ')
+        console.log(ConflictClass)
+        console.log('The minimum number of rooms required will be: ' + ConflictClass.length)
+    } else {
+        console.log('No Conflicts in Lectures')
+    };
+
+};
+
+MinRooms(IntervalArray);
+```
+
+## Problem 22:
+Given a dictionary of words and a string made up of those words (no spaces), return the original sentence in a list. If there is more than one possible reconstruction, return any of them. If there is no possible reconstruction, then return null.
+
+For example, given the set of words 'quick', 'brown', 'the', 'fox', and the string "thequickbrownfox", you should return ['the', 'quick', 'brown', 'fox'].
+
+Given the set of words 'bed', 'bath', 'bedbath', 'and', 'beyond', and the string "bedbathandbeyond", return either ['bed', 'bath', 'and', 'beyond] or ['bedbath', 'and', 'beyond'].
+
+**Solution:**
+- [Thought Process](https://d2ta.github.io/DailyCodingProblem/Problem-09/problem-09.md)
+- [Solution Page](https://d2ta.github.io/DailyCodingProblem/Problem-09/problem-09index.html)
+- [Code](https://d2ta.github.io/DailyCodingProblem/Problem-09/problem-09.js)
+
+```javascript
 ```
