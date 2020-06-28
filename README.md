@@ -551,6 +551,139 @@ Do this in O(n) time and O(k) space. You can modify the input array in-place and
 - [Code](https://d2ta.github.io/DailyCodingProblem/Problem-09/problem-09.js)
 
 ```javascript
+var array = [10, 5, 2, 7, 8, 8];
+var k = 4;
+var inputArray = []
 
+function maxArray(array, kValue){
+    var OutputArray = [];
+    var NumIteration = array.length - kValue + 1;
+    if (kValue > array.length){
+        return console.log('error, new k');
+    } else {
+        for (i = 0; i < NumIteration; i++){
+            var ChoiceArray = [parseInt(array[i]), parseInt(array[i+1]), parseInt(array[i+2])];
+            console.log(ChoiceArray);
+            ChoiceArray = ChoiceArray.map( item => {
+                if (item >= 0 || item < 0){
+                    return item
+                } else {
+                    return 0
+                };
+            } );
+            OutputArray.push(Math.max(...ChoiceArray) );
+        };
+        return OutputArray;
+    }
+}
+
+Output = maxArray(array, k)
+// console.log(Output);
+
+function InsertFunction(){
+    var value = parseInt(document.getElementById("arrayInsert").value);
+    var subArrayLen = document.getElementById("kValue").value;
+    if (subArrayLen === ""){
+        var subArrayLen = 1;
+        document.getElementById('SubArrayValue').innerHTML = 1;
+    } else {
+        document.getElementById('SubArrayValue').innerHTML = subArrayLen.toString();
+    };
+
+    inputArray.push(value);
+    document.getElementById('InputArrayShow').innerHTML = inputArray.toString();
+
+    Output = maxArray(inputArray, subArrayLen);
+
+    document.getElementById('OutputArrayShow').innerHTML = Output.toString();
+}
 ```
 
+## Problem 19:
+A builder is looking to build a row of N houses that can be of K different colors. He has a goal of minimizing cost while ensuring that no two neighboring houses are of the same color.
+
+Given an N by K matrix where the nth row and kth column represents the cost to build the nth house with kth color, return the minimum cost which achieves this goal.
+
+**Solution:**
+- [Thought Process](https://d2ta.github.io/DailyCodingProblem/Problem-09/problem-09.md)
+- [Solution Page](https://d2ta.github.io/DailyCodingProblem/Problem-09/problem-09index.html)
+- [Code](https://d2ta.github.io/DailyCodingProblem/Problem-09/problem-09.js)
+
+```javascript
+```
+
+## Problem 20:
+Given two singly linked lists that intersect at some point, find the intersecting node. The lists are non-cyclical.
+
+For example, given A = 3 -> 7 -> 8 -> 10 and B = 99 -> 1 -> 8 -> 10, return the node with value 8.
+
+In this example, assume nodes with the same value are the exact same node objects.
+
+Do this in O(M + N) time (where M and N are the lengths of the lists) and constant space.
+
+**Solution:**
+- [Thought Process](https://d2ta.github.io/DailyCodingProblem/Problem-09/problem-09.md)
+- [Solution Page](https://d2ta.github.io/DailyCodingProblem/Problem-09/problem-09index.html)
+- [Code](https://d2ta.github.io/DailyCodingProblem/Problem-09/problem-09.js)
+
+```javascript
+var NodeString1 = '3 -> 7 -> 8 -> 10'
+var NodeString2 = '99 -> 1 -> 8 -> 10'
+
+function StringArray(NodeString){
+    CommaVector = [];
+    NodeArray = [];
+    
+    // Perform a global replacement: is to include / /g
+    NodeString = NodeString.replace(/ -> /g,',');
+    
+    // Fron Node String, identify comma placement
+    for (i=0; i <= NodeString.length - 1; i++){
+
+        if (NodeString[i] === ','){
+            CommaVector.push(i)
+        };
+    };
+    // Given comma placement, output string values to array
+    NodeArray.push(NodeString.slice(0, CommaVector[0]))
+    for (i = 0; i <= CommaVector.length - 1; i ++){
+        NodeArray.push( NodeString.slice( CommaVector[i]+1, CommaVector[i+1] ) )
+    };
+    return NodeArray;
+};
+
+function ValueArrayCheck1(item) {
+    if (Array2.includes(item)){
+        console.log('There is a Node Match from Array1 to Array2. Node Value: ' + item.toString())
+    }
+};
+
+function ValueArrayCheck2(item) {
+    if (Array1.includes(item)){
+        console.log('There is a Node Match from Array2 to Array1. Node Value: ' + item.toString())
+    }
+};
+Array1 = StringArray(NodeString1);
+Array2 = StringArray(NodeString2);
+
+console.log('Array 1 is: ')
+console.log(Array1)
+console.log('Array 2 is: ')
+console.log(Array2)
+
+Array1.forEach(ValueArrayCheck1);
+Array2.forEach(ValueArrayCheck2);
+```
+
+## Problem 21:
+Given an array of time intervals (start, end) for classroom lectures (possibly overlapping), find the minimum number of rooms required.
+
+For example, given [(30, 75), (0, 50), (60, 150)], you should return 2.
+
+**Solution:**
+- [Thought Process](https://d2ta.github.io/DailyCodingProblem/Problem-09/problem-09.md)
+- [Solution Page](https://d2ta.github.io/DailyCodingProblem/Problem-09/problem-09index.html)
+- [Code](https://d2ta.github.io/DailyCodingProblem/Problem-09/problem-09.js)
+
+```javascript
+```
